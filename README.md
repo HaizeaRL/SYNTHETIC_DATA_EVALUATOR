@@ -50,13 +50,41 @@ Each component of the project is designed to ensure a comprehensive approach to 
 
 ## Installation
 
-To ensure a clean and isolated environment for this project, it's essential to create a virtual environment before installing the required Python packages. Once the virtual environment is set up, you should install the required packages.
+To ensure a clean and isolated environment for this project, a `Dockerfile` is provided to launch Docker locally and run a Python 3.7 container. This approach ensures that local environment remains unaffected and that all dependencies are installed within the container.
 
-The necessary packages are listed in the `requirements.txt` file. Install them using the following command:
+### Prerequisites:
 
-```bash
-pip install -r requirements.txt
-```
+- **Docker** must be installed on your machine. You can download and install Docker from the [official website](https://www.docker.com/get-started).
+
+### Steps to Set Up and Run the Project:
+
+1. **Build the Docker Image**:
+
+   First, build the Docker image for the project using the provided `Dockerfile`:
+
+   ```bash
+   docker build -t python-3.7-jupyter .
+   ```
+
+2. **Run the Docker Container**:
+
+   After building the image, run the container with the following command:
+
+   ```bash
+   docker run -it --rm -p 8888:8888 -v ${PWD}:/app python-3.7-jupyter
+   ```
+
+   This command will:
+
+- Mount your current directory (`${PWD}`) to the `/app` folder inside the container.
+- Map port `8888` from the container to your local machine, allowing access to Jupyter.
+- Automatically remove the container when it stops (`--rm`).
+
+### Access Jupyter Notebooks:
+
+Once the container is running, you can access the Jupyter notebook interface by opening your browser and navigating to: `http://localhost:8888`
+
+
 
 
 

@@ -4,3 +4,4 @@ seaborn
 sdv
 pyarrow
 scikit-learn
+imbalanced-learn

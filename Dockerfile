@@ -8,7 +8,9 @@ WORKDIR /usr/local/app
 RUN pip install --no-cache-dir jupyter
 
 # Install the application dependencies
-COPY requirements.txt /src/sdv_synthetic_data.ipynb /src/synthetic_data_evaluation_and_comparation.ipynb ./
+RUN mkdir -p ./src
+COPY requirements.txt ./
+COPY /src/ ./src/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run Jupyter notebook in the container

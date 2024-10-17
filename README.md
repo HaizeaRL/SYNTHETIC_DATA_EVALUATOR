@@ -62,10 +62,10 @@ To ensure a clean and isolated environment for this project, a `Dockerfile` is p
 
 1. **Build the Docker Image**:
 
-   First, build the Docker image for the project using the provided `Dockerfile`:
+   First, build the Docker image for the project using the provided `Dockerfile`. Replace `<app-name>` with the name of your application or service :
 
    ```bash
-   docker build -t python-3.7-jupyter .
+   docker build -t <app-name> .
    ```
 
 2. **Run the Docker Container**:
@@ -73,7 +73,7 @@ To ensure a clean and isolated environment for this project, a `Dockerfile` is p
    After building the image, run the container with the following command:
 
    ```bash
-   docker run -it --rm -p 8888:8888 -v ${PWD}:/app python-3.7-jupyter
+   docker run -it --rm -p 8888:8888 -v ${PWD}:/app <app-name>
    ```
 
    This command will:

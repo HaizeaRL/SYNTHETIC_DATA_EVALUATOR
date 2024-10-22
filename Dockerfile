@@ -11,6 +11,7 @@ RUN pip install --no-cache-dir jupyter
 RUN mkdir -p ./src
 COPY requirements.txt ./
 COPY /src/ ./src/
+COPY /resources/ ./resources/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run Jupyter notebook in the container

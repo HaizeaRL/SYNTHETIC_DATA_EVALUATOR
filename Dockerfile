@@ -11,7 +11,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
 COPY /src/ ./src/
-COPY /resources/ ./resources/
 
 # Command to run Jupyter notebook in the container
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token=''"]

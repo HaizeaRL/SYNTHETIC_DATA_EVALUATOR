@@ -1,18 +1,17 @@
 # Use the official Python 3.7 image from Docker Hub
-FROM python:3.7
+FROM python:3.7-slim
 
 # Set the working directory inside the container
 WORKDIR /usr/local/app
 
-# Install Jupyter
+# Install Jupyter and application dependencies
 RUN pip install --no-cache-dir jupyter
+COPY requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install the application dependencies
-RUN mkdir -p ./src
-COPY requirements.txt ./
+# Copy the application code
 COPY /src/ ./src/
 COPY /resources/ ./resources/
-RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run Jupyter notebook in the container
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token=''"]

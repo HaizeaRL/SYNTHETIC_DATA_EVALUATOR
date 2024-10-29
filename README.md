@@ -9,13 +9,14 @@ This GitHub project aims to assess the quality and similarity of synthetic data 
 
 ## Overview
 
-Synthetic data is becoming increasingly important due to the numerous benefits it offers, particularly in terms of privacy protection and data sharing. By generating artificial copies of real data that retain the original dataset statistical properties, organizations can securely share sensitive information without risking exposure.
+Data privacy is crucial, especially when information needs to be shared. To protect sensitive data, it must be anonymized. Traditionally, this task was performed using `legacy anonymization techniques`. However, with the evolution of new technologies and the rise of Big Data, these methods have been replaced by more complex technologies, with `synthetic data generation` using machine learning becoming the most prevalent approach.
 
-This project utilizes the `UCI machine learning repository` dataset to analyze synthetic data generation, focusing on creating synthetic versions of the dataset using two distinct methods:
+Today, synthetic data creation can be carried out in two primary ways: by utilizing an open-source library known as the `Synthetic Data Vault (SDV)` or by using online platforms such as `Mostly.AI`.
 
-1. **Mostly.AI Platform**: A widely recognized tool for synthetic data generation.  
+This project utilizes the `UCI Machine Learning Repository` dataset to analyze synthetic data generation, focusing on creating synthetic versions of the dataset using these two distinct methods:
+
+1. **Mostly.AI Platform**: A widely recognized tool for synthetic data generation.
 2. **Synthetic Data Vault (SDV)**: An open-source library popular for creating and assessing synthetic datasets.
-
 
 ## Key Features
 

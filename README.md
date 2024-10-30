@@ -49,7 +49,8 @@ The project is organized into the following directories and files:
   - `1-data_preparation.ipynb`
   - `2-sdv_synthesizers_creator.ipynb`
   - `3-sdv_best_synth_data.ipynb`
-  - `4-sdv_synth_data_evaluator.ipynb`: The conclusions of the project are presented in the `Conclusion` section of this script.
+  - `4-sdv_synth_data_evaluator.ipynb`
+  - `Conclusion.md` The conclusions of the project are presented in this script.
 
 - **requirements.txt**: Lists the Python packages required to run the project.
 

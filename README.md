@@ -37,7 +37,7 @@ This project utilizes the `UCI Machine Learning Repository` dataset to analyze s
 
 The project is organized into the following directories and files:
 
-- **resources/**: Contains the `UCI Diabetes 130-US Hospitals for Years 1999-2008` dataset, named `diabetes.csv`, along with instructions for synthetic data creation using the Mostly.AI platform, provided in the `mostly_ai_synthetic_data_creation.md` file.
+- **resources/**: Contains the dataset `diabetes.csv` from the `UCI Diabetes 130-US Hospitals for Years 1999-2008`. This folder also includes instructions for synthetic data creation using the `Mostly.AI` platform, provided in the `mostly_ai_synthetic_data_creation.md` file, as well as an article on the `Synthetic Data Vault`.
 
 - **results/**: Stores the outcomes obtained during the synthetic data generation process. This includes:
   - `preprocessed_file.parquet`: The preprocessed dataset.

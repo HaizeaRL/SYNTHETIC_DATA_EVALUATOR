@@ -33,14 +33,22 @@ This project utilizes the `UCI Machine Learning Repository` dataset to analyze s
 - **Insight Extraction**: Draws conclusions based on the comparative analysis and the synthetic data generation process.
 
 
+## Results
+
+- **Mostly.AI**: the simplest option. With basic preprocessing it generated synthetic data whose distributions and correlations match the original dataset with up to 99.1% similarity, preserving categorical distributions. Infrequent categories are replaced by `_RARE_` to prevent re-identification.
+- **SDV – GaussianCopula**: accurate for numeric columns once their distributions are configured, but some categories were missing or absent and categorical distributions were not preserved. It would need post-processing.
+- **SDV – CTGAN**: trained for 300 epochs; results still diverge from the real data, so more training or tuning would be needed.
+
+In this case, Mostly.AI was the preferable choice. The evaluation focuses on fidelity (similarity between real and synthetic data); privacy-specific metrics are out of scope. Full details in [`src/Conclusion.md`](src/Conclusion.md).
+
 ## Project Structure
 
 The project is organized into the following directories and files:
 
-- **resources/**: This folder contain several important assets for the project, including:
+- **resources/**: This folder contains several important assets for the project, including:
   - The `diabetes.csv` dataset downloaded from the `UCI Diabetes 130-US Hospitals for Years 1999-2008`.
   - Instructions for synthetic data creation using the `Mostly.AI` platform, provided in the `mostly_ai_synthetic_data_creation.md` file.
-  - An article on the `Synthetic Data Vault`, found in the `SDV.pdf` file.
+  - Reference: *The Synthetic Data Vault* (Patki, Wedge & Veeramachaneni, IEEE DSAA 2016), available [here](https://dai.lids.mit.edu/wp-content/uploads/2018/03/SDV.pdf).
 
 - **results/**: Stores the outcomes obtained during the synthetic data generation process. This includes:
   - `preprocessed_file.parquet`: The preprocessed dataset.
@@ -97,7 +105,7 @@ To ensure a clean and isolated environment for this project, a `Dockerfile` is p
 
 If you execute the scripts presented in the project, the results will be created and saved in the container. If you want to retrieve the results locally, follow these instructions:
 
-**Retrieve resuts locally**   
+**Retrieve results locally**   
    
    Identify the running Docker container:
    ```bash
@@ -108,10 +116,3 @@ If you execute the scripts presented in the project, the results will be created
    ```bash
     docker cp <docker_instance>:/<docker_path_to_retrieve> .
    ```
-
-
-
-
-
-
-
